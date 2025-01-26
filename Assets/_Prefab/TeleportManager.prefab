@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4629102195553119928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1484813598453744526}
+  - component: {fileID: 8893795978246354153}
+  m_Layer: 0
+  m_Name: TeleportManager
+  m_TagString: TeleportManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1484813598453744526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629102195553119928}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.12788922, y: 0.19921204, z: -0.009714652}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8893795978246354153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629102195553119928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59fec1ab296735449b3833bea8e04df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  telePoints: []
+  player: {fileID: 465557435911407187, guid: 901984b70630bf9458c1e512c3d4a611, type: 3}
+  arrow: {fileID: 5459584642786412326, guid: 027a23c7c171d28418fdab98fa4b0c57, type: 3}
+  cd: 0.25
+  canGetOut: 0
+  isTeleporting: 0
+  isInner: 0
+  specialClick: 0
+  jumpClick: 0
