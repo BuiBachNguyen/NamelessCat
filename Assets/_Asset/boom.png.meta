@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff8ad87bc43799a4f9c6dcdb35c02126
+guid: 12f2e21c83b240a4bb3370c5d7e54071
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 17
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: object_ground_0
+      name: boom_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 79
-        width: 18
-        height: 18
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9780160d3afc71b41b79c450d8786ca8
-      internalID: 279212798
+      spriteID: c2795d80b1236f849b4108b48c4d3ef6
+      internalID: 794774802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: object_ground_1
+      name: boom_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 79
-        width: 18
-        height: 18
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce34277dbbb3c6d4e9951d72a055d532
-      internalID: -791567541
+      spriteID: 97f52e9054be729498f406fb2c44e2f5
+      internalID: -457456489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: object_ground_2
+      name: boom_2
       rect:
         serializedVersion: 2
-        x: 6
-        y: 55
-        width: 18
-        height: 18
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5743aae5160677849a6b21a81ea540e9
-      internalID: 2110115908
+      spriteID: 6b1db094543e03e45b4a4c655d13ce31
+      internalID: -1684812713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: object_ground_3
+      name: boom_3
       rect:
         serializedVersion: 2
-        x: 31
-        y: 55
-        width: 18
-        height: 18
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a887dcc48b4073409f806a04c1e4f37
-      internalID: -1490117053
+      spriteID: 45fe08c558583014482b05f00c02a477
+      internalID: -1704821643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: object_ground_4
+      name: boom_4
       rect:
         serializedVersion: 2
-        x: 55
-        y: 79
-        width: 18
-        height: 18
+        x: 64
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2865513d61c311e4b9b850b30899a88f
-      internalID: -693997093
+      spriteID: f7032ed5b6e477f49ac6ccd85ba48447
+      internalID: 1739267560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: object_ground_5
+      name: boom_5
       rect:
         serializedVersion: 2
-        x: 55
-        y: 103
-        width: 18
-        height: 18
+        x: 80
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0811ddf7a9297a74d943b20366c58c7d
-      internalID: -1141620123
+      spriteID: 6c4c36bac358bc04d92003917aaf60e4
+      internalID: -607216116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: object_ground_6
+      name: boom_6
       rect:
         serializedVersion: 2
-        x: 79
-        y: 81
-        width: 18
-        height: 18
+        x: 96
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,29 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7740032029fb1d141ab35cac9f9cc695
-      internalID: -1486389011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: object_ground_7
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 104
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df27dc4d8b17aec4eb4431339f5ca39b
-      internalID: -2045018546
+      spriteID: 60ace668edcf76440aa73173766a8f95
+      internalID: 1811391063
       vertices: []
       indices: 
       edges: []
@@ -288,14 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      object_ground_0: 279212798
-      object_ground_1: -791567541
-      object_ground_2: 2110115908
-      object_ground_3: -1490117053
-      object_ground_4: -693997093
-      object_ground_5: -1141620123
-      object_ground_6: -1486389011
-      object_ground_7: -2045018546
+      boom_0: 794774802
+      boom_1: -457456489
+      boom_2: -1684812713
+      boom_3: -1704821643
+      boom_4: 1739267560
+      boom_5: -607216116
+      boom_6: 1811391063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
