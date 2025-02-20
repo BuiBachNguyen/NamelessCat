@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,7 @@ public class DialougeTrigger : MonoBehaviour
     private bool wasPlayed;
     public Animator animator;
     public int WaitTime;
+    //
     public void StartDialogue()
     {
         if (wasPlayed) return;
@@ -18,6 +19,7 @@ public class DialougeTrigger : MonoBehaviour
         wasPlayed = true;
         animator.SetBool("isOn", true);
     }
+    //Va chạm
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && !wasPlayed)
@@ -25,15 +27,10 @@ public class DialougeTrigger : MonoBehaviour
             StartCoroutine("Wait_Coroutine");
         }
     }
-
+    //Chờ rồi chạy
     public IEnumerator Wait_Coroutine()
     {
-        int i = 0;
-        while (i + 1 < WaitTime)
-        {
-            i++;
-            yield return new WaitForSeconds(1f);
-        }
+        yield return new WaitForSeconds(WaitTime);
         StartDialogue();
     }
 }

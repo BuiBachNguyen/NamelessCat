@@ -19,7 +19,7 @@ public class JumpState : IState
 
     public void Execute()
     {
-        Debug.Log("ex jump");
+        //Debug.Log("ex jump");
     }
 
     public void Exit()

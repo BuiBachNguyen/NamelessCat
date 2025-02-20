@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class TeleportManager : MonoBehaviour
 {
+    [SerializeField] _AudioManager _audio;
     [SerializeField] List<Telepoints> telePoints = new List<Telepoints>();
     [SerializeField] GameObject player;
     [SerializeField] GameObject arrow;
@@ -19,6 +20,7 @@ public class TeleportManager : MonoBehaviour
     public bool jumpClick;
 
     float rangeToTeleport = 6.5f;
+    int indexOfChoice = -1;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class TeleportManager : MonoBehaviour
         isInner = false;
         canGetOut = true;
         player = GameObject.FindGameObjectWithTag("Player");
+        _audio = _AudioManager.Instance;
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class TeleportManager : MonoBehaviour
         ReRenderTelepoint();
         Teleport();
         ShowArrow();
+        LeadPlayerWhenOff();
     }
 
     public void CheckTeleportStatus()
@@ -119,11 +123,15 @@ public class TeleportManager : MonoBehaviour
                 if (nearest < rangeToTeleport)
                 {
                     telePoints[flagN].TeleHandle();
+                    _audio.PlaySFX(_audio.Teleport);
+                    indexOfChoice = flagN;
                 }
             }
             else if (secondNearest < rangeToTeleport)
             {
                 telePoints[flagSN].TeleHandle();
+                _audio.PlaySFX(_audio.Teleport);
+                indexOfChoice = flagSN;
             }
         }
         //Get out 
@@ -131,13 +139,18 @@ public class TeleportManager : MonoBehaviour
         {
             isTeleporting = false;
             isInner = false;
-            player.transform.position += Vector3.up;
+            player.transform.position = telePoints[indexOfChoice].transform.position + Vector3.up;
             EnablePlayer();
+            indexOfChoice = -1;
             cd = 0.25f;
         }
         jumpClick = false;
     }
-
+    void LeadPlayerWhenOff()
+    {
+        if (indexOfChoice < 0) return;
+        player.transform.position = telePoints[indexOfChoice].transform.position;
+    }
     void ShowArrow()
     {
         if (telePoints.Count <= 0) return;
@@ -153,6 +166,10 @@ public class TeleportManager : MonoBehaviour
             {
                 arrow.transform.position = telePoints[flagSN].transform.position + new Vector3(0, 1f, 0);
                 arrow.SetActive(true);
+            }
+            else
+            {
+                arrow.SetActive(false);
             }
         }
     }

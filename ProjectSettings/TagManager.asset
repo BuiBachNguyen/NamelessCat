@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - telePoint
   - Enermy
+  - TriggerDialogue
+  - Portal
   layers:
   - Default
   - TransparentFX

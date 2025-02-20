@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class _SceneManager : MonoBehaviour
@@ -32,5 +33,16 @@ public class _SceneManager : MonoBehaviour
     public void LoadCurrentScene()
     {
         SceneManager.LoadScene(Player_Data.level);
+    }
+    public void ReloadingSceneWhenDie()
+    {
+        Player_Data.level-=1;
+        SetActiveLoadOut();
+    }
+    public void LoadSelectedScene(int level)
+    {
+        level -= 1;
+        Player_Data.level = level;
+        SetActiveLoadOut();
     }
 }

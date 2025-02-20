@@ -19,7 +19,7 @@ public class RunState : IState
 
     public void Execute()
     {
-        Debug.Log("ex Running");
+        //Debug.Log("ex Running");
     }
 
     public void Exit()

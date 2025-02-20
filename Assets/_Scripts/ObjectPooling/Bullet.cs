@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPooledObject
 {
+    float lifetime = 10f;
+    [SerializeField] float speed = 2f;
     void Update()
     {
-        this.transform.position += Vector3.left;
+        transform.position += Vector3.left * Time.deltaTime * speed;
     }
-
-    public float lifetime = 5f;
     public void OnObjectSpawn()
     {
         Invoke(nameof(ReturnToPool), lifetime);
@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour, IPooledObject
         this.gameObject.SetActive(false);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         ReturnToPool();
     }

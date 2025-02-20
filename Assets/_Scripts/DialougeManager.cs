@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,14 +16,17 @@ public class DialougeManager : MonoBehaviour
     Actor[] currentActors;
     int activeMessage = 0;
 
-    public bool isSkip;
+    public bool isSkip; // đc skip chưa nè
     void Start()
     {
+        isSkip = false;
     }
     void Update()
     {
 
     }
+
+    //Mở lên
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
         currentMessages = messages;
@@ -32,6 +36,7 @@ public class DialougeManager : MonoBehaviour
         DisplayMessage();
     }
 
+    //Hiển thị
     void DisplayMessage()
     {
         Message messageToDisplay = currentMessages[activeMessage];
@@ -41,7 +46,7 @@ public class DialougeManager : MonoBehaviour
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
     }
-
+    //Thông điệp kế tiếp
     public void NextMessage()
     {
         activeMessage++;
@@ -54,6 +59,7 @@ public class DialougeManager : MonoBehaviour
             isSkip = true;
         }
     }
+    //Skip qua
     public void SkipDialogue()
     {
         if (!isSkip)

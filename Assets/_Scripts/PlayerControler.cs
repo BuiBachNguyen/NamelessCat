@@ -11,12 +11,14 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] StateManager _stateManager;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteLibrary _asset;
+    [SerializeField] _AudioManager _audio;
+    [SerializeField] _SceneManager _scManager;
     //ForButton
     public bool _isWalkingLeft = false;
     public bool _isWalkingRight = false;
     public bool _isJumping = false;
     public bool _isTeleporting = false;
-
+    public bool _isDead = false;
     //For moving
     [SerializeField] bool _isFacingRight = true;
     [SerializeField] float _jumpForce = 5f;
@@ -36,6 +38,7 @@ public class PlayerControler : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _stateManager = this.GetComponent<StateManager>();
+        _audio = _AudioManager.Instance;
     }
     void FixedUpdate()
     {
@@ -60,10 +63,13 @@ public class PlayerControler : MonoBehaviour
             _velocity = Vector3.MoveTowards(_velocity, targetVelocity, _acceleration * 5 * Time.deltaTime);
             _stateManager.ChangeState(new RunState(_animator));
             transform.Translate(_velocity * Time.deltaTime);
+            if (!_audio.SFXSourceForWalk.isPlaying)
+                _audio.PlayWalkSound();
         }
         else
         {
             _velocity = Vector3.zero;
+            _audio.StopWalkSound();
             _stateManager.ChangeState(new IdleState(_animator));
         }
 
@@ -110,5 +116,30 @@ public class PlayerControler : MonoBehaviour
     public void IsTriggerTeleport(bool isActive)
     {
         _isTeleporting = isActive;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("TriggerDialogue"))
+        {
+            _isWalkingLeft
+                = _isWalkingRight
+                = _isJumping
+                = _isTeleporting = false;
+        }
+        if (collision.gameObject.CompareTag("Enermy"))
+        {
+            _stateManager.ChangeState(new DeadState(_animator));
+        }
+        if (collision.gameObject.CompareTag("Portal"))
+        {
+            _scManager.SetActiveLoadOut();
+        }
+    }
+    public void ReSpawn() => _stateManager.ChangeState(new IdleState(_animator));
+    public void ReLoading()
+    {
+        if (_isDead) return;
+        _scManager.ReloadingSceneWhenDie();
+        _isDead = true;
     }
 }

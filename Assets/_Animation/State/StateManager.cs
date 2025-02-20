@@ -24,4 +24,8 @@ public class StateManager : MonoBehaviour
         if (_currentState != null)
             _currentState.Enter();
     }
+    public IState GetCurrentState()
+    {
+        return _currentState;
+    }
 }

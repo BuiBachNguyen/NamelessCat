@@ -9,7 +9,6 @@ public abstract class Telepoints : MonoBehaviour
     private float rangeToTeleport = 6.5f;
 
     public abstract void TeleHandle();
-
     public void CheckPlayerPosition()
     {
         if (player == null) return;

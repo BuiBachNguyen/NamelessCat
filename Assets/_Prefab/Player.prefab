@@ -23,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3709210650581612284
 Transform:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 465557435911407187}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 881db4ad4e4ef9f49a2d03824d760d7f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -242,10 +242,13 @@ MonoBehaviour:
   _stateManager: {fileID: 0}
   _animator: {fileID: 0}
   _asset: {fileID: 0}
+  _audio: {fileID: 0}
+  _scManager: {fileID: 0}
   _isWalkingLeft: 0
   _isWalkingRight: 0
   _isJumping: 0
   _isTeleporting: 0
+  _isDead: 0
   _isFacingRight: 1
   _jumpForce: 5
   _isGrounded: 1

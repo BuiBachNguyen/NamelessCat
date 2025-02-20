@@ -18,7 +18,7 @@ public class IdleState : IState
 
     public void Execute()
     {
-        Debug.Log("Executing Idle State");
+        //Debug.Log("Executing Idle State");
     }
 
     public void Exit()
