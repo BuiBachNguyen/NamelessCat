@@ -45,4 +45,8 @@ public class _SceneManager : MonoBehaviour
         Player_Data.level = level;
         SetActiveLoadOut();
     }
+    public void LOADMENU()
+    {
+        SceneManager.LoadScene("Select_Level");
+    }
 }

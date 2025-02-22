@@ -28,7 +28,7 @@ public class PausePanel : MonoBehaviour
     public void Home()
     {
         Time.timeScale = 1;
-        _scManager.LoadSelectedScene(6);
+        _scManager.LOADMENU();
     }
 
 }

@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Player_Data
   m_EditorClassIdentifier: 
   numberOfMemory: 0
-  level: 1
+  maxlevel: 3
+  level: 3
   isDead: 0
+  indexOfSkin: 2
+  AudioIsOn: 1
   _assets:
   - {fileID: 7108339969198208228, guid: 996a9ee6cd421cb419a483403ffc7670, type: 3}
   - {fileID: 7108339969198208228, guid: 4f8b89f3565d32d4b8c48f3475d6551c, type: 3}
   - {fileID: 7108339969198208228, guid: 9f17d254a42cce7498df002fb2488b6b, type: 3}
-  indexOfSkin: 2

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5872915841481333258}
   m_Layer: 0
   m_Name: Little_Rabbit
-  m_TagString: Untagged
+  m_TagString: Enermy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 4294967295
+  _audio: {fileID: 0}
 --- !u!95 &5872915841481333258
 Animator:
   serializedVersion: 5
@@ -244,7 +245,7 @@ GameObject:
   - component: {fileID: 8392242077373549495}
   m_Layer: 0
   m_Name: EnermyRabbitRush
-  m_TagString: Untagged
+  m_TagString: Enermy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

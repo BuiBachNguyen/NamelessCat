@@ -30,12 +30,14 @@ public class PlayerControler : MonoBehaviour
     private float _delta;
     private float _countDownTime = 1f;
     private Rigidbody2D _rb;
+    private Collider2D _coll;
 
     void Start()
     {
         _asset = GetComponent<SpriteLibrary>();
         _asset.spriteLibraryAsset = Player_Data._assets[Player_Data.indexOfSkin];
         _rb = GetComponent<Rigidbody2D>();
+        _coll = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
         _stateManager = this.GetComponent<StateManager>();
         _audio = _AudioManager.Instance;
@@ -128,11 +130,22 @@ public class PlayerControler : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enermy"))
         {
+            _coll.enabled = false;
+            this.gameObject.transform.SetParent(null);
             _stateManager.ChangeState(new DeadState(_animator));
         }
         if (collision.gameObject.CompareTag("Portal"))
         {
             _scManager.SetActiveLoadOut();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enermy"))
+        {
+            _coll.enabled = false;
+            this.gameObject.transform.SetParent(null);
+            _stateManager.ChangeState(new DeadState(_animator));
         }
     }
     public void ReSpawn() => _stateManager.ChangeState(new IdleState(_animator));

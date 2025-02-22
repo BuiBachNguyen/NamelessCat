@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPooledObject
 {
-    float lifetime = 10f;
+    float lifetime = 20f;
     [SerializeField] float speed = 2f;
     void Update()
     {
